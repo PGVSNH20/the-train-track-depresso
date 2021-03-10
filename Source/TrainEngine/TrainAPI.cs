@@ -6,9 +6,9 @@ namespace TrainEngine
 {
     class TrainAPI
     {
-        Train train1 = new Train("Name of train");
-        Station station1 = new Station("Gothenburg");
-        Station station2 = new Station("Stockholm");
+        Train train1 = new Train("Hogwarts Express");
+        Station station1 = new Station("Westeros");
+        Station station2 = new Station("Liverpool");
 
         ITravelPlan travelPlan = new TrainPlaner(train1, station1)
                 .HeadTowards(station2)
