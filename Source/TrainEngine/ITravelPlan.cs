@@ -6,12 +6,12 @@ namespace TrainEngine
 {
     public interface ITravelPlan
     {
-        List<object> TimeTable { get; }
+       List<object> TimeTable { get; }
 
-        object Train { get; }
+       object Train { get; }
 
-        void Save(string path);
-        void Load(string path);
+       void Save(string path);
+       void Load(string path);
 
     }
 }
