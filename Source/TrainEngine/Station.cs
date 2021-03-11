@@ -4,13 +4,12 @@ using System.Text;
 
 namespace TrainEngine
 {
-    class Station
+    public class Station
     {
         public string name { get; }
         public Station (string name)
         {
 
         }
-
     }
 }
