@@ -15,7 +15,7 @@ namespace TrainEngine
                 .DepartureAt(station1, "")
                 .ArrivalAt(station2, "10:23")
             .GeneratePlan(); 
-
         */
+        
     }
 }

@@ -20,24 +20,24 @@ namespace TrainEngine
             throw new NotImplementedException();
         }
 
-        public TravelPlan(Train train, Station station1)
+        public TravelPlan(Train train)
         {
 
         }
 
-        public void DepartureAt(Station currentStation, string departure)
+        public TravelPlan DepartureAt(Station currentStation, string departure)
         {
-
+            return this;
         }
 
-        public void ArriveAt(Station destination, string arrival)
+        public TravelPlan ArrivalAt(Station destination, string arrival)
         {
-
+            return this;
         }
 
-        public void GeneratePlan()
+        public ITravelPlan GeneratePlan()
         {
-
+            return this;
         }
     }
 }

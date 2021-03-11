@@ -10,7 +10,7 @@ namespace TrainEngine.Tests
         {
             // Arrange
             string track = "[1]";
-            TrackOrm trackOrm = new TrackOrm();
+            EngineOrms trackOrm = new EngineOrms();
 
             // Act
             var result = trackOrm.ParseTrackDescription(track);
@@ -26,7 +26,7 @@ namespace TrainEngine.Tests
         {
             // Arrange
             string track = "[1]-[2]";
-            TrackOrm trackOrm = new TrackOrm();
+            EngineOrms trackOrm = new EngineOrms();
             
             // Act
             var result = trackOrm.ParseTrackDescription(track);
