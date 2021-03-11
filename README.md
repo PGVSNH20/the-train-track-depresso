@@ -32,6 +32,10 @@ Make sure to start simple, and then extend the program.
 
 ### Part 1 - A fluent API to plan the trains
 
+>  **The goal of Part 1**
+>
+> To create a Fluent API which can be used to set up a plan/schedule for all parts of the train track. When the train starts and stops, from and to where the trains go. And later on control the position of crossings and switches. The API should return an instance of a plan/schedule model.
+
 Produce a fluent API used by mr Carlos to manually plan the trains, it could maybe look something like this:
 
 ```C#
@@ -44,11 +48,13 @@ ITravelPlan travelPlan = new TrainPlaner(train1, station1)
         .StartTrainAt("10:23")
         .StopTrainAt(station2, "14:53")
     .GeneratePlan();
-
-
 ```
 
 ### Part 2 - Develop an ORM for reading the data
+
+> **The goal of Part 2**
+>
+> Create class which works as an ORM for each of the provided file type, and model for each type.  The ORM should be able to read the file, and return an instance of the belonging model. An ORM should also be created which can handle (load and save) the plan/schedule model.
 
 Create your own mini ORM for the data provided. 
 
@@ -60,6 +66,10 @@ travelPlan.Load("Data/travelplan-train1.txt"); //json, yaml, bin, csv
 ```
 
 ### Part 3 - Simulate train track
+
+> **The goal of Part 3**
+>
+> Implement functionality to simulate the track using a minimum of one thread. Give the user a notion of one or more trains running on the track and that how it tries to follow the given plan/schedule.
 
 It should be possible to start the trains on the track, a bit like this:
 
