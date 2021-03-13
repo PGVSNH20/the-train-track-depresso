@@ -1,4 +1,0 @@
-1|AvestaCrimeTown|true
-2|ArkhamNorra|false
-3|GavleWest|true
-4|ArkhamSouth|false
