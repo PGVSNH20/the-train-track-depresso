@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using TrainEngine;
 
 namespace TrainConsole
@@ -23,6 +24,8 @@ namespace TrainConsole
                     .DepartureAt(station1, "")
                     .ArrivalAt(station2, "10:23")
                 .GeneratePlan();
+
+            Console.WriteLine();
         }
     }
 }
