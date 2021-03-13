@@ -9,13 +9,19 @@ namespace TrainEngine
     {
         public TrackDescription ParseTrackDescription(string track)
         {
+
+            //            The stations placement eg: [1]
+            //            The start station: *
+            //            Tracks: -, / and \
+            //            Railroad switches: < and >
+            //            Level crossing (vägbom): = 
             throw new NotImplementedException();
         }
 
         public List<Passenger> ParsePassengers()
         {
             List<Passenger> passengers = new List<Passenger>();
-            
+
             foreach (string row in File.ReadAllLines("..\\passengers.txt"))
             {
                 string[] column = row.Split(';');
@@ -43,7 +49,7 @@ namespace TrainEngine
             }
             return trains;
         }
-    
+
         public List<Station> ParseStations()
         {
             List<Station> stations = new List<Station>();
