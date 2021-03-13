@@ -1,4 +1,3 @@
-Id|StationName|EndStation
 1|Stonecro|true
 2|Mount Juanceo|false
 3|Grand Retro|true
