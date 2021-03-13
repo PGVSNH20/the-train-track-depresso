@@ -11,7 +11,7 @@ namespace TrainEngine
         public int MaxSpeed { get; set; }
         public bool Operated { get; set; }
         
-        public Train(string name)
+        public Train()
         {
             
         }

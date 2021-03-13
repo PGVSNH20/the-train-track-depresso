@@ -12,11 +12,23 @@ namespace TrainEngine
             throw new NotImplementedException();
         }
 
-        public Train ParseTrains()
+        public List<Train> ParseTrains()
         {
-            throw new NotImplementedException();
-        }
+            List<Train> trains = new List<Train>();
 
+            foreach (string row in File.ReadAllLines("C:\\Users\\frejb\\source\\repos\\the-train-track-depresso\\Data\\trains.txt"))
+            {
+                string[] column = row.Split(',');
+                Train train = new Train();
+                train.Id = Int32.Parse(column[0]);
+                train.Name = column[1];
+                train.MaxSpeed = Int32.Parse(column[2]);
+                train.Operated = Boolean.Parse(column[3]);
+                trains.Add(train);
+            }
+            return trains;
+        }
+    
         public List<Station> ParseStations()
         {
             List<Station> stations = new List<Station>();
