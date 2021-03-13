@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using TrainEngine;
 
@@ -29,3 +30,34 @@ namespace TrainConsole
         }
     }
 }
+
+
+
+
+
+// !!SKRIVER UT TÅGINFO!!
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+
+
+//            List<Train> trains = new List<Train>();
+
+//            foreach (string row in File.ReadAllLines("C:\\Users\\frejb\\source\\repos\\the-train-track-depresso\\Source\\Data\\trains.txt"))
+//            {
+//                string[] column = row.Split(',');
+//                Train train = new Train();
+//                train.Id = Int32.Parse(column[0]);
+//                train.Name = column[1];
+//                train.MaxSpeed = Int32.Parse(column[2]);
+//                train.Operated = Boolean.Parse(column[3]);
+//                trains.Add(train);
+
+//                Console.WriteLine("\nTrain ID: " + train.Id + "\nTrain name: " + train.Name + "\nTrain max speed: " + train.MaxSpeed + "\nTrain is operated: " + train.Operated);
+//            }
+
+
+//        }
+//    }
+//}

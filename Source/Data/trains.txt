@@ -1,4 +1,3 @@
-Id,Name,MaxSpeed,Operated
 1,Flying Scotsman,100,false
 2,Golden Arrow,120,true
 3,Lapplandståget,50,true

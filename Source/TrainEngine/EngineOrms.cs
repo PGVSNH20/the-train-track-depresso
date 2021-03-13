@@ -12,11 +12,26 @@ namespace TrainEngine
             throw new NotImplementedException();
         }
 
+        public List<Passenger> ParsePassengers()
+        {
+            List<Passenger> passengers = new List<Passenger>();
+            
+            foreach (string row in File.ReadAllLines("..\\passengers.txt"))
+            {
+                string[] column = row.Split(';');
+                Passenger passenger = new Passenger();
+                passenger.Id = Int32.Parse(column[0]);
+                passenger.FullName = column[1];
+                passengers.Add(passenger);
+            }
+            return passengers;
+        }
+
         public List<Train> ParseTrains()
         {
             List<Train> trains = new List<Train>();
 
-            foreach (string row in File.ReadAllLines("C:\\Users\\frejb\\source\\repos\\the-train-track-depresso\\Data\\trains.txt"))
+            foreach (string row in File.ReadAllLines("..\\trains.txt"))
             {
                 string[] column = row.Split(',');
                 Train train = new Train();
@@ -33,7 +48,7 @@ namespace TrainEngine
         {
             List<Station> stations = new List<Station>();
 
-            foreach (string row in File.ReadAllLines("C:\\Projects\\Trainwreck\\Data\\stations.txt")) // gör sökvägen relativ
+            foreach (string row in File.ReadAllLines("..\\stations.txt")) // gör sökvägen relativ
             {
                 string[] column = row.Split('|');
                 Station station = new Station();
