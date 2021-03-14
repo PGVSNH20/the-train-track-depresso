@@ -30,34 +30,57 @@ namespace TrainConsole
     //        }
     //    }
     //}
-
-
-
-
-
-    // !!SKRIVER UT TÅGINFO!!
-    class Program
+    class program
     {
+
         static void Main(string[] args)
         {
+            List<TimeTable> timetables = new();
 
 
-            List<Train> trains = new List<Train>();
-            string pathToTxt = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\trains.txt";
+            string pathToTxt = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\timetable.txt";
             foreach (string row in File.ReadAllLines(pathToTxt))
+
             {
                 string[] column = row.Split(',');
-                Train train = new Train();
-                train.Id = Int32.Parse(column[0]);
-                train.Name = column[1];
-                train.MaxSpeed = Int32.Parse(column[2]);
-                train.Operated = Boolean.Parse(column[3]);
-                trains.Add(train);
 
-                Console.WriteLine("\nTrain ID: " + train.Id + "\nTrain name: " + train.Name + "\nTrain max speed: " + train.MaxSpeed + "\nTrain is operated: " + train.Operated);
+                TimeTable timetable = new TimeTable();
+                timetable.TrainId = int.Parse(column[0]);
+                timetable.StationID = int.Parse(column[1]);
+                timetable.DepartureTime = column[2];
+                timetable.ArrivalTime = column[3];
+                timetables.Add(timetable);
+
+                Console.WriteLine("\nTrain ID: " + timetable.TrainId + "\nStation ID: " + timetable.StationID + "\nDeparture time: " + timetable.DepartureTime + "\nArrival time: " + timetable.ArrivalTime);
             }
-
-
         }
+
+
+
+        // !!SKRIVER UT TÅGINFO!!
+        //class Program
+        //{
+        //    static void Main(string[] args)
+        //    {
+
+
+        //        List<Train> trains = new List<Train>();
+        //        string pathToTxt = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\trains.txt";
+        //        foreach (string row in File.ReadAllLines(pathToTxt))
+        //        {
+        //            string[] column = row.Split(',');
+        //            Train train = new Train();
+        //            train.Id = Int32.Parse(column[0]);
+        //            train.Name = column[1];
+        //            train.MaxSpeed = Int32.Parse(column[2]);
+        //            train.Operated = Boolean.Parse(column[3]);
+        //            trains.Add(train);
+
+        //            Console.WriteLine("\nTrain ID: " + train.Id + "\nTrain name: " + train.Name + "\nTrain max speed: " + train.MaxSpeed + "\nTrain is operated: " + train.Operated);
+        //        }
+
+
+        //    }
+        //}
     }
 }

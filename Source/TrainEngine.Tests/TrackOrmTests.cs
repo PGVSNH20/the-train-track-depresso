@@ -34,5 +34,18 @@ namespace TrainEngine.Tests
             // Assert
             Assert.Equal(3, result.NumberOfTrackParts);
         }
+
+        [Fact]
+        public void Read_TimeTable()
+        {
+
+        }
+
+        [Fact]
+        public void Write_TimeTable()
+        {
+
+        }
+
     }
 }
