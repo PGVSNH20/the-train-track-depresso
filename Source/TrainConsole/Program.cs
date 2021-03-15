@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using TrainEngine;
 
 namespace TrainConsole
@@ -32,27 +33,31 @@ namespace TrainConsole
     //}
     class program
     {
-
         static void Main(string[] args)
         {
-            List<TimeTable> timetables = new();
+            Clock myClock = new Clock(13, 37);
+            Thread thread1 = new Thread(new ThreadStart(myClock.StartClock));
+            thread1.Start();
 
 
-            string pathToTxt = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\timetable.txt";
-            foreach (string row in File.ReadAllLines(pathToTxt))
+            //List<TimeTable> timetables = new();
 
-            {
-                string[] column = row.Split(',');
 
-                TimeTable timetable = new TimeTable();
-                timetable.TrainId = int.Parse(column[0]);
-                timetable.StationID = int.Parse(column[1]);
-                timetable.DepartureTime = column[2];
-                timetable.ArrivalTime = column[3];
-                timetables.Add(timetable);
+            //string pathToTxt = "C:\\Projects\\Trainwreck\\Data\\timetable.txt";
+            //foreach (string row in File.ReadAllLines(pathToTxt))
 
-                Console.WriteLine("\nTrain ID: " + timetable.TrainId + "\nStation ID: " + timetable.StationID + "\nDeparture time: " + timetable.DepartureTime + "\nArrival time: " + timetable.ArrivalTime);
-            }
+            //{
+            //    string[] column = row.Split(',');
+
+            //    TimeTable timetable = new TimeTable();
+            //    timetable.TrainId = int.Parse(column[0]);
+            //    timetable.StationID = int.Parse(column[1]);
+            //    timetable.DepartureTime = column[2];
+            //    timetable.ArrivalTime = column[3];
+            //    timetables.Add(timetable);
+
+            //    Console.WriteLine("\nTrain ID: " + timetable.TrainId + "\nStation ID: " + timetable.StationID + "\nDeparture time: " + timetable.DepartureTime + "\nArrival time: " + timetable.ArrivalTime);
+            //}
         }
 
 
