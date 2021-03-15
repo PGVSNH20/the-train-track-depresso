@@ -27,11 +27,13 @@ namespace TrainEngine
                 string row = array[i];
                 string[] column = row.Split(';');
 
-                TimeTable timetable = new TimeTable();
-                timetable.TrainId = Int32.Parse(column[0]);
-                timetable.StationID = Int32.Parse(column[1]);
-                timetable.DepartureTime = column[2];
-                timetable.ArrivalTime = column[3];
+                TimeTable timetable = new TimeTable
+                {
+                    TrainId = Int32.Parse(column[0]),
+                    StationID = Int32.Parse(column[1]),
+                    DepartureTime = column[2],
+                    ArrivalTime = column[3]
+                };
 
                 timetables.Add(timetable);
             }

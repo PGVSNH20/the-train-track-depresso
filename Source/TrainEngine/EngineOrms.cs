@@ -27,9 +27,11 @@ namespace TrainEngine
             {
                 string row = array[i];
                 string[] column = row.Split(';');
-                Passenger passenger = new Passenger();
-                passenger.Id = Int32.Parse(column[0]);
-                passenger.FullName = column[1];
+                Passenger passenger = new Passenger
+                {
+                    Id = Int32.Parse(column[0]),
+                    FullName = column[1]
+                };
                 passengers.Add(passenger);
             }
             return passengers;
@@ -44,11 +46,13 @@ namespace TrainEngine
             {
                 string row = array[i];
                 string[] column = row.Split(',');
-                Train train = new Train();
-                train.Id = Int32.Parse(column[0]);
-                train.Name = column[1];
-                train.MaxSpeed = Int32.Parse(column[2]);
-                train.Operated = Boolean.Parse(column[3]);
+                Train train = new Train
+                {
+                    Id = Int32.Parse(column[0]),
+                    Name = column[1],
+                    MaxSpeed = Int32.Parse(column[2]),
+                    Operated = Boolean.Parse(column[3])
+                };
                 trains.Add(train);
             }
             return trains;
@@ -63,10 +67,12 @@ namespace TrainEngine
             {
                 string row = array[i];
                 string[] column = row.Split('|');
-                Station station = new Station();
-                station.Id = Int32.Parse(column[0]);
-                station.StationName = column[1];
-                station.EndStation = Boolean.Parse(column[2]);
+                Station station = new Station
+                {
+                    Id = Int32.Parse(column[0]),
+                    StationName = column[1],
+                    EndStation = Boolean.Parse(column[2])
+                };
                 stations.Add(station);
             }
 

@@ -10,10 +10,10 @@ namespace TrainEngine
         public string Name { get; set; }
         public int MaxSpeed { get; set; }
         public bool Operated { get; set; }
-        
+
         public Train()
         {
-            
+
         }
 
     }
