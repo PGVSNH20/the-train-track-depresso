@@ -7,7 +7,7 @@ namespace TrainEngine
 {
     public class EngineOrms
     {
-        public List<Passenger> ParsePassengers()
+        public static List<Passenger> ParsePassengers()
         {
             List<Passenger> passengers = new List<Passenger>();
 
@@ -26,11 +26,11 @@ namespace TrainEngine
             return passengers;
         }
 
-        public List<Train> ParseTrains()
+        public static List<Train> ParseTrains()
         {
             List<Train> trains = new List<Train>();
 
-            string[] array = File.ReadAllLines("..\\trains.txt");
+            string[] array = File.ReadAllLines("C:\\Projects\\Trainwreck\\Data\\trains.txt");
             for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];
@@ -47,7 +47,7 @@ namespace TrainEngine
             return trains;
         }
 
-        public List<Station> ParseStations()
+        public static List<Station> ParseStations()
         {
             List<Station> stations = new List<Station>();
 

@@ -17,15 +17,15 @@ namespace TrainEngine
         //Omvandla till int senare
 
 
-        public List<TimeTable> Read()
+        public static List<TimeTable> Read()
         {
             List<TimeTable> timetables = new List<TimeTable>();
 
-            string[] array = File.ReadAllLines("..\\TimeTable.txt");
+            string[] array = File.ReadAllLines("C:\\Projects\\Trainwreck\\Data\\TimeTable.txt");
             for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];
-                string[] column = row.Split(';');
+                string[] column = row.Split(',');
 
                 TimeTable timetable = new TimeTable
                 {
