@@ -7,17 +7,6 @@ namespace TrainEngine
 {
     public class EngineOrms
     {
-        public TrackDescription ParseTrackDescription(string track)
-        {
-
-            //            The stations placement eg: [1]
-            //            The start station: *
-            //            Tracks: -, / and \
-            //            Railroad switches: < and >
-            //            Level crossing (vägbom): = 
-            throw new NotImplementedException();
-        }
-
         public List<Passenger> ParsePassengers()
         {
             List<Passenger> passengers = new List<Passenger>();
