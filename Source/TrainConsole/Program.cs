@@ -40,24 +40,26 @@ namespace TrainConsole
             thread1.Start();
 
 
-            //List<TimeTable> timetables = new();
+            List<TimeTable> timetables = new();
 
 
-            //string pathToTxt = "C:\\Projects\\Trainwreck\\Data\\timetable.txt";
-            //foreach (string row in File.ReadAllLines(pathToTxt))
+            string pathToTxt = "C:\\Projects\\Trainwreck\\Data\\timetable.txt";
+            string[] array = File.ReadAllLines(pathToTxt);
+            for (int i = 1; i < array.Length; i++)
 
-            //{
-            //    string[] column = row.Split(',');
+            {
+                string row = array[i];
+                string[] column = row.Split(',');
 
-            //    TimeTable timetable = new TimeTable();
-            //    timetable.TrainId = int.Parse(column[0]);
-            //    timetable.StationID = int.Parse(column[1]);
-            //    timetable.DepartureTime = column[2];
-            //    timetable.ArrivalTime = column[3];
-            //    timetables.Add(timetable);
+                TimeTable timetable = new TimeTable();
+                timetable.TrainId = int.Parse(column[0]);
+                timetable.StationID = int.Parse(column[1]);
+                timetable.DepartureTime = column[2];
+                timetable.ArrivalTime = column[3];
+                timetables.Add(timetable);
 
-            //    Console.WriteLine("\nTrain ID: " + timetable.TrainId + "\nStation ID: " + timetable.StationID + "\nDeparture time: " + timetable.DepartureTime + "\nArrival time: " + timetable.ArrivalTime);
-            //}
+                Console.WriteLine("\nTrain ID: " + timetable.TrainId + "\nStation ID: " + timetable.StationID + "\nDeparture time: " + timetable.DepartureTime + "\nArrival time: " + timetable.ArrivalTime);
+            }
         }
 
 

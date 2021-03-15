@@ -21,8 +21,10 @@ namespace TrainEngine
         {
             List<TimeTable> timetables = new List<TimeTable>();
 
-            foreach (string row in File.ReadAllLines("..\\TimeTable.txt"))
+            string[] array = File.ReadAllLines("..\\TimeTable.txt");
+            for (int i = 1; i < array.Length; i++)
             {
+                string row = array[i];
                 string[] column = row.Split(';');
 
                 TimeTable timetable = new TimeTable();
@@ -36,16 +38,10 @@ namespace TrainEngine
             return timetables;
         }
 
-
-
-
         public void Write()
         {
 
         }
-
-
-
     }
 }
 
