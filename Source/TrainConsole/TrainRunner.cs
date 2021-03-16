@@ -8,7 +8,7 @@ using TrainEngine;
 
 namespace TrainConsole
 {
-    public class TrainRunner
+    public class TrainRunner: ITrainRunner
     {
         private Thread simulatorThread;
         private Train trainToSimulate;

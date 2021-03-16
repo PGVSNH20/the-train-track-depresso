@@ -21,9 +21,9 @@ namespace TrainEngine
             Console.WriteLine($"Reading file {trainFile}");
             Trains = new List<Train>();
 
-            foreach (var stationLine in stationLines)
+            foreach (string stationLine in stationLines)
             {
-                var stationParts = stationLine.Split(new char[] { ';' });
+                string[] stationParts = stationLine.Split(new char[] { ';' });
 
                 if (stationParts == null || stationParts.Length != 2)
                 {

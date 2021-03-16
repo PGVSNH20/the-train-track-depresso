@@ -18,7 +18,7 @@ namespace TrainEngine
 
         public void Load()
         {
-            var stationLines = System.IO.File.ReadAllLines(StationFileName);
+            var stationLines = System.IO.File.ReadAllLines(@"C:\Users\frejb\source\repos\the-train-track-depresso\Source\TrainConsole\bin\Debug\net5.0\stations.txt");
             Console.WriteLine($"Reading file {StationFileName}");
             Stations = new List<Station>();
 
