@@ -7,7 +7,7 @@ namespace TrainEngine
     public class Station
     {
         public int Id { get; set; }
-        public string StationName { get; set; }
+        public string Name { get; set; }
         public bool EndStation { get; set; }
         public int Distance { get; set; }
 
@@ -19,7 +19,7 @@ namespace TrainEngine
         public Station(int id, string stationName, bool endStation)
         {
             Id = id;
-            StationName = stationName;
+            Name = stationName;
             EndStation = endStation;
         }
     }

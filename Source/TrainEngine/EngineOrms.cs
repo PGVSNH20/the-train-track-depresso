@@ -59,7 +59,7 @@ namespace TrainEngine
                 Station station = new Station
                 {
                     Id = Int32.Parse(column[0]),
-                    StationName = column[1],
+                    Name = column[1],
                     EndStation = Boolean.Parse(column[2])
                 };
                 stations.Add(station);

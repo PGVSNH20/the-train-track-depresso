@@ -42,7 +42,7 @@ namespace TrainConsole
             {
 
                 int distanceDrived = tts.MaxSpeed * Clock.minutesWhichHaveTicked;
-                Console.WriteLine($"So far have {tts.Name} gone {distanceDrived} in {FakeClock.MinutesWhichHaveTicked} min");
+                Console.WriteLine($"So far have {tts.Name} gone {distanceDrived} in {Clock.minutesWhichHaveTicked} min");
                 if (distanceDrived >= distanceToDrive)
                 {
                     simulatorIsRunning = false;
