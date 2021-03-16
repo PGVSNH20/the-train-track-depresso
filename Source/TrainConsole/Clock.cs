@@ -7,32 +7,42 @@ using System.Threading.Tasks;
 
 namespace TrainConsole
 {
-    public class Clock
+    public class Clock : IClock
     {
-        public int hours;
-        public int minutes;
+        private Thread clockThread;
+        private static bool timeIsTicking;
+        public static int minutesWhichHaveTicked;
 
-        public Clock(int h, int m)
+        public Clock()
         {
-            hours = h;
-            minutes = m;
+            clockThread = new Thread(Tick);
+            clockThread.IsBackground = true;
+            timeIsTicking = false;
+            minutesWhichHaveTicked = 0;
+            clockThread.Start();
         }
 
-        public void StartClock()
+        public void Start()
         {
-            for(; minutes <= 60; minutes++)
+            timeIsTicking = true;
+        }
+
+        public void Stop()
+        {
+            timeIsTicking = false;
+        }
+
+        private static void Tick()
+        {
+            while (true)
             {
-                if(minutes == 60)
+                Thread.Sleep(100);
+                if (timeIsTicking)
                 {
-                    minutes = 0;
-                    hours++;
-                    if(hours == 24)
-                    {
-                        hours = 0;
-                    }
+                    minutesWhichHaveTicked++;
+                    Console.WriteLine($"Tick: {minutesWhichHaveTicked} min have passed");
                 }
-                Console.WriteLine(hours + ":" + minutes);
-                Thread.Sleep(1000);
+
             }
         }
     }
