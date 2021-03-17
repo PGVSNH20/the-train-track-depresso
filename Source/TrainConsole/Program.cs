@@ -9,11 +9,18 @@ namespace TrainConsole
     {
         static void Main(string[] args)
         {
+            var klockan = new Clock();
+            klockan.Start();
+
             List<Passenger> svejs = EngineOrms.ParsePassengers();
             foreach(var hej in svejs)
             {
                 Console.WriteLine(hej.FullName);
+                Thread.Sleep(100);
             }
+
+            klockan.Stop();
+            Console.WriteLine("hejsan svensjan");
 
             Console.ReadLine();
         }
