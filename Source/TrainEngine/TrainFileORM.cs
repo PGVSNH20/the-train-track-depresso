@@ -17,7 +17,7 @@ namespace TrainEngine
 
         public void Load()
         {
-            var stationLines = System.IO.File.ReadAllLines(trainFile);
+            var stationLines = System.IO.File.ReadAllLines(@"..\..\..\Data\trains.txt");
             Console.WriteLine($"Reading file {trainFile}");
             Trains = new List<Train>();
 

@@ -21,7 +21,7 @@ namespace TrainEngine
         {
             List<TimeTable> timetables = new List<TimeTable>();
 
-            string[] array = File.ReadAllLines("C:\\Projects\\Trainwreck\\Data\\TimeTable.txt");
+            string[] array = File.ReadAllLines(@"..\..\..\Data\timetable.txt");
             for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];

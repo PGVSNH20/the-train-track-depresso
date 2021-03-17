@@ -11,12 +11,12 @@ namespace TrainEngine
         {
             List<Passenger> passengers = new List<Passenger>();
 
-            string[] array = File.ReadAllLines("..\\passengers.txt");
+            string[] array = File.ReadAllLines(@"..\..\..\Data\passengers.txt");
             for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];
                 string[] column = row.Split(';');
-                Passenger passenger = new Passenger
+                var passenger = new Passenger
                 {
                     Id = Int32.Parse(column[0]),
                     FullName = column[1]
@@ -30,7 +30,7 @@ namespace TrainEngine
         {
             List<Train> trains = new List<Train>();
 
-            string[] array = File.ReadAllLines("C:\\Projects\\Trainwreck\\Data\\trains.txt");
+            string[] array = File.ReadAllLines(@"..\..\..\Data\trains.txt");
             for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];
@@ -51,8 +51,8 @@ namespace TrainEngine
         {
             List<Station> stations = new List<Station>();
 
-            string[] array = File.ReadAllLines("..\\stations.txt");
-            for (int i = 1; i < array.Length; i++) // gör sökvägen relativ
+            string[] array = File.ReadAllLines(@"..\..\..\Data\stations.txt");
+            for (int i = 1; i < array.Length; i++)
             {
                 string row = array[i];
                 string[] column = row.Split('|');

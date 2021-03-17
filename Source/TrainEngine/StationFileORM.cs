@@ -8,7 +8,6 @@ namespace TrainEngine
     public class StationFileORM : IStationFileORM
     {
         private string StationFileName;
-
         public StationFileORM(string filename)
         {
             this.StationFileName = filename;
@@ -18,7 +17,7 @@ namespace TrainEngine
 
         public void Load()
         {
-            var stationLines = System.IO.File.ReadAllLines(@"C:\Users\frejb\source\repos\the-train-track-depresso\Source\TrainConsole\bin\Debug\net5.0\stations.txt");
+            var stationLines = System.IO.File.ReadAllLines(@"..\..\..\Data\stations.txt");
             Console.WriteLine($"Reading file {StationFileName}");
             Stations = new List<Station>();
 

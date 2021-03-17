@@ -1,9 +1,9 @@
 1;Misty Walton
 2;Ianis Hayes
-3:Dominykas Kidd
+3;Dominykas Kidd
 4;Kali Savage
 5;Mathew Porter
-6:Priscilla Marshall
+6;Priscilla Marshall
 10;Caio Thornton
 11;Kaylem Mcbride
 12;Austin Christian
